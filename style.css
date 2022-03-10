@@ -1,19 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
 body{
-    background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction:column;
+  background: #ffffff;
+}
+.btn1{
+  position: relative;
+  padding: 30px 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  margin: 40px;
+  text-decoration: none;
+  transition: 1s;
+  border-radius: 4px;
+  overflow: hidden;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, transparent, #0004);
+}
+.btn1:hover{
+  background: var(--clr);
+  box-shadow: 0 0 10px var(--clr),
+              0 0 30px var(--clr),
+              0 0 60px var(--clr),
+              0 0 80px var(--clr);
+}
+.btn1:before{
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 400%;
+  background: var(--clr);
+  transition: 1s;
+  animation: animate 2s linear infinite;
+  animation-delay: calc(0.33s * var(--1));
+}
+.btn1:hover:before{
+  width: 120%;
+}
+@keyframes animate{
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+.btn1:after{
+  content: '';
+  position: absolute;
+  inset: 4px;
+  background: #6f9ae9;
+  cursor: pointer;
 }
 
-h1{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-h2{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
+/*La Ligne 62(background :...) correspond a la couleur du fond du boutton*/
 
+.btn1:hover:after{
+  background: var(--clr);
 }
-p{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: large;
+.btn1 span{
+  position: relative;
+  z-index: 1;
+  font-size: 2em;
+  color: rgb(255, 255, 255);
+  opacity: 5;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  transition: 0.5s;
 }
-li{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+.btn1:hover span{
+  opacity: 1;
 }
